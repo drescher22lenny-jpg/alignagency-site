@@ -1,13 +1,13 @@
 import { FormEvent, useState } from "react";
 
-const RECIPIENT_EMAIL = "info@align-agency.com";
-
 type ContactFormData = {
   name: string;
   email: string;
   company: string;
   message: string;
 };
+
+type SubmissionState = "idle" | "submitting" | "success" | "error";
 
 const INITIAL_FORM_DATA: ContactFormData = {
   name: "",
@@ -16,28 +16,43 @@ const INITIAL_FORM_DATA: ContactFormData = {
   message: "",
 };
 
-function buildMailtoLink(data: ContactFormData) {
-  const subject = `Projektanfrage von ${data.name}${data.company ? ` | ${data.company}` : ""}`;
-  const body = [
-    "Neue Anfrage über alignAgency",
-    "",
-    `Name: ${data.name}`,
-    `E-Mail: ${data.email}`,
-    `Unternehmen: ${data.company || "-"}`,
-    "",
-    "Nachricht:",
-    data.message,
-  ].join("\n");
-
-  return `mailto:${RECIPIENT_EMAIL}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-}
-
 function ContactForm() {
   const [formData, setFormData] = useState(INITIAL_FORM_DATA);
+  const [submissionState, setSubmissionState] = useState<SubmissionState>("idle");
+  const [feedbackMessage, setFeedbackMessage] = useState("");
 
-  function handleSubmit(event: FormEvent<HTMLFormElement>) {
+  async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
-    window.location.href = buildMailtoLink(formData);
+
+    setSubmissionState("submitting");
+    setFeedbackMessage("");
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(formData),
+      });
+
+      const result = (await response.json()) as { error?: string };
+
+      if (!response.ok) {
+        throw new Error(result.error || "Die Anfrage konnte nicht gesendet werden.");
+      }
+
+      setSubmissionState("success");
+      setFeedbackMessage("Vielen Dank. Ihre Anfrage wurde erfolgreich versendet.");
+      setFormData(INITIAL_FORM_DATA);
+    } catch (error) {
+      setSubmissionState("error");
+      setFeedbackMessage(
+        error instanceof Error
+          ? error.message
+          : "Die Anfrage konnte gerade nicht gesendet werden.",
+      );
+    }
   }
 
   function updateField<K extends keyof ContactFormData>(field: K, value: ContactFormData[K]) {
@@ -118,14 +133,23 @@ function ContactForm() {
       </div>
 
       <div className="sm:col-span-2 flex items-center justify-between gap-4">
-        <p className="text-xs leading-6 text-white/45">
-          Die Anfrage wird an {RECIPIENT_EMAIL} als vorbereitete E-Mail geöffnet.
+        <p
+          className={`text-xs leading-6 ${
+            submissionState === "error"
+              ? "text-[#f08b49]"
+              : submissionState === "success"
+                ? "text-white/70"
+                : "text-white/45"
+          }`}
+        >
+          {feedbackMessage || "Ihre Anfrage wird direkt über die Website an unser Team gesendet."}
         </p>
         <button
           type="submit"
+          disabled={submissionState === "submitting"}
           className="inline-flex rounded-full bg-accent-gradient px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.01]"
         >
-          Anfrage senden
+          {submissionState === "submitting" ? "Wird gesendet..." : "Anfrage senden"}
         </button>
       </div>
     </form>
