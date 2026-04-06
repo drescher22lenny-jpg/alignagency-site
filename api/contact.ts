@@ -11,46 +11,53 @@ type ContactPayload = {
   message?: string;
 };
 
-function badRequest(message: string) {
-  return new Response(JSON.stringify({ error: message }), {
-    status: 400,
-    headers: { "Content-Type": "application/json" },
-  });
+function sendJson(
+  res: {
+    status: (code: number) => { json: (payload: unknown) => void };
+  },
+  status: number,
+  payload: unknown,
+) {
+  res.status(status).json(payload);
 }
 
-export default async function handler(request: Request) {
-  if (request.method !== "POST") {
-    return new Response(JSON.stringify({ error: "Method not allowed." }), {
-      status: 405,
-      headers: {
-        "Allow": "POST",
-        "Content-Type": "application/json",
-      },
-    });
+export default async function handler(
+  req: {
+    method?: string;
+    body?: ContactPayload;
+  },
+  res: {
+    setHeader: (name: string, value: string) => void;
+    status: (code: number) => { json: (payload: unknown) => void };
+  },
+) {
+  if (req.method !== "POST") {
+    res.setHeader("Allow", "POST");
+    sendJson(res, 405, { error: "Method not allowed." });
+    return;
   }
 
   if (!resendApiKey) {
-    return new Response(JSON.stringify({ error: "RESEND_API_KEY is not configured." }), {
-      status: 500,
-      headers: { "Content-Type": "application/json" },
-    });
+    sendJson(res, 500, { error: "RESEND_API_KEY is not configured." });
+    return;
   }
 
-  const payload = (await request.json()) as ContactPayload;
+  const payload = req.body || {};
   const name = payload.name?.trim();
   const email = payload.email?.trim();
   const company = payload.company?.trim() || "-";
   const message = payload.message?.trim();
 
   if (!name || !email || !message) {
-    return badRequest("Bitte füllen Sie Name, E-Mail und Nachricht aus.");
+    sendJson(res, 400, { error: "Bitte füllen Sie Name, E-Mail und Nachricht aus." });
+    return;
   }
 
   const resend = new Resend(resendApiKey);
 
   try {
-    await resend.emails.send({
-      from: `alignAgency <${senderEmail}>`,
+    const { error } = await resend.emails.send({
+      from: senderEmail,
       to: [recipientEmail],
       replyTo: email,
       subject: `Neue Anfrage von ${name}${company !== "-" ? ` | ${company}` : ""}`,
@@ -66,19 +73,19 @@ export default async function handler(request: Request) {
       `,
     });
 
-    return new Response(JSON.stringify({ success: true }), {
-      status: 200,
-      headers: { "Content-Type": "application/json" },
-    });
+    if (error) {
+      sendJson(res, 500, { error: error.message || "Die Anfrage konnte nicht gesendet werden." });
+      return;
+    }
+
+    sendJson(res, 200, { success: true });
   } catch (error) {
     console.error("Resend contact form error:", error);
-
-    return new Response(
-      JSON.stringify({ error: "Die Anfrage konnte gerade nicht gesendet werden." }),
-      {
-        status: 500,
-        headers: { "Content-Type": "application/json" },
-      },
-    );
+    sendJson(res, 500, {
+      error:
+        error instanceof Error
+          ? error.message
+          : "Die Anfrage konnte gerade nicht gesendet werden.",
+    });
   }
 }
