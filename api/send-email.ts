@@ -1,8 +1,8 @@
 import { Resend } from "resend";
 
 const recipientEmail = "info@align-agency.com";
+const senderEmail = "info@align-agency.com";
 const resendApiKey = process.env.RESEND_API_KEY;
-const senderEmail = process.env.RESEND_FROM_EMAIL || "onboarding@resend.dev";
 
 type ContactPayload = {
   name?: string;
@@ -11,26 +11,23 @@ type ContactPayload = {
   message?: string;
 };
 
-function sendJson(
-  res: {
-    status: (code: number) => { json: (payload: unknown) => void };
-  },
-  status: number,
-  payload: unknown,
-) {
+type VercelRequest = {
+  method?: string;
+  body?: ContactPayload;
+};
+
+type VercelResponse = {
+  setHeader: (name: string, value: string) => void;
+  status: (code: number) => {
+    json: (payload: unknown) => void;
+  };
+};
+
+function sendJson(res: VercelResponse, status: number, payload: unknown) {
   res.status(status).json(payload);
 }
 
-export default async function handler(
-  req: {
-    method?: string;
-    body?: ContactPayload;
-  },
-  res: {
-    setHeader: (name: string, value: string) => void;
-    status: (code: number) => { json: (payload: unknown) => void };
-  },
-) {
+export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== "POST") {
     res.setHeader("Allow", "POST");
     sendJson(res, 405, { error: "Method not allowed." });
@@ -38,7 +35,9 @@ export default async function handler(
   }
 
   if (!resendApiKey) {
-    sendJson(res, 500, { error: "RESEND_API_KEY is not configured." });
+    sendJson(res, 500, {
+      error: "RESEND_API_KEY is not configured on the server.",
+    });
     return;
   }
 
@@ -49,7 +48,9 @@ export default async function handler(
   const message = payload.message?.trim();
 
   if (!name || !email || !message) {
-    sendJson(res, 400, { error: "Bitte füllen Sie Name, E-Mail und Nachricht aus." });
+    sendJson(res, 400, {
+      error: "Bitte füllen Sie Name, E-Mail und Nachricht aus.",
+    });
     return;
   }
 
@@ -57,13 +58,13 @@ export default async function handler(
 
   try {
     const { error } = await resend.emails.send({
-      from: senderEmail,
+      from: `alignAgency <${senderEmail}>`,
       to: [recipientEmail],
       replyTo: email,
-      subject: `Neue Anfrage von ${name}${company !== "-" ? ` | ${company}` : ""}`,
+      subject: "Neue Anfrage über Website",
       html: `
         <div style="font-family: Arial, sans-serif; line-height: 1.6; color: #111;">
-          <h2>Neue Anfrage über alignAgency</h2>
+          <h2>Neue Anfrage</h2>
           <p><strong>Name:</strong> ${name}</p>
           <p><strong>E-Mail:</strong> ${email}</p>
           <p><strong>Unternehmen:</strong> ${company}</p>
@@ -74,13 +75,15 @@ export default async function handler(
     });
 
     if (error) {
-      sendJson(res, 500, { error: error.message || "Die Anfrage konnte nicht gesendet werden." });
+      sendJson(res, 500, {
+        error: error.message || "Die Anfrage konnte nicht gesendet werden.",
+      });
       return;
     }
 
     sendJson(res, 200, { success: true });
   } catch (error) {
-    console.error("Resend contact form error:", error);
+    console.error("Resend send-email error:", error);
     sendJson(res, 500, {
       error:
         error instanceof Error

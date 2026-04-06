@@ -28,7 +28,7 @@ function ContactForm() {
     setFeedbackMessage("");
 
     try {
-      const response = await fetch("/api/contact", {
+      const response = await fetch("/api/send-email", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -142,7 +142,7 @@ function ContactForm() {
                 : "text-white/45"
           }`}
         >
-          {feedbackMessage || "Ihre Anfrage wird direkt über die Website an unser Team gesendet."}
+          {feedbackMessage || "Ihre Anfrage wird direkt über die Website an info@align-agency.com gesendet."}
         </p>
         <button
           type="submit"
