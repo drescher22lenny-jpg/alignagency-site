@@ -103,10 +103,4 @@ export const teamMembers: TeamMember[] = [
     image: "/images/team/creative-director-founder.jpg",
     bio: "Prägt visuelle Richtung, Markenwirkung und kreative Systeme mit einem klaren Blick für Wiedererkennbarkeit und Qualität.",
   },
-  {
-    name: "Leon Schmidt",
-    role: "Lead Development",
-    image: "/images/team/lead-development.png",
-    bio: "Übersetzt Ideen in digitale Lösungen, die technisch sauber, funktional und im Alltag wirklich nutzbar sind.",
-  },
 ];
