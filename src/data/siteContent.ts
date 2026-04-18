@@ -20,7 +20,6 @@ export type TeamMember = {
 
 export const navigationItems = [
   { label: "Start", href: "/" },
-  { label: "Portfolio", href: "/portfolio" },
   { label: "Über uns", href: "/about" },
   { label: "Kontakt", href: "/contact" },
 ];
@@ -100,7 +99,7 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Lenny Drescher",
     role: "Creative Director & Founder",
-    image: "/images/team/creative-director-founder.jpg",
+    image: "/images/team/creative-director-founder.png",
     bio: "Prägt visuelle Richtung, Markenwirkung und kreative Systeme mit einem klaren Blick für Wiedererkennbarkeit und Qualität.",
   },
 ];
