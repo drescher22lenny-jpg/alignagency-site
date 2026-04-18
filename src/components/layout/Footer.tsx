@@ -14,9 +14,6 @@ function Footer() {
         </div>
 
         <div className="flex flex-col gap-2 text-sm text-white/55">
-          <Link to="/portfolio" className="transition hover:text-white/90">
-            Portfolio
-          </Link>
           <Link to="/about" className="transition hover:text-white/90">
             Über uns
           </Link>

@@ -35,10 +35,10 @@ function HeroSection() {
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
             <Link
-              to="/portfolio"
+              to="/about"
               className="inline-flex items-center justify-center rounded-full bg-accent-gradient px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.01]"
             >
-              Portfolio ansehen
+              Über uns
             </Link>
             <Link
               to="/contact"
