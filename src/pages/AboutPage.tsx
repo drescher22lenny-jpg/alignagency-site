@@ -3,10 +3,10 @@ import GlassCard from "../components/ui/GlassCard";
 import SectionHeading from "../components/ui/SectionHeading";
 
 const pillars = [
-  "Branding mit klarer Haltung und visueller Stringenz",
-  "Social-Media-Systeme, die modern aussehen und in der Praxis funktionieren",
-  "Kampagnen, die wiedererkennbar sind und sauber umgesetzt werden",
-  "Digitale Lösungen, die Gestaltung und Nutzen in Einklang bringen",
+  "Short Form Content für Fahrzeuge, Angebote und Aktionen",
+  "Imagefilme, die Vertrauen schaffen und den Betrieb hochwertig zeigen",
+  "Erfahrung mit Autohäusern, Motorradhändlern und deren Zielgruppen",
+  "Klare Abläufe von der Idee bis zum fertigen Content",
 ];
 
 function AboutPage() {
@@ -16,16 +16,15 @@ function AboutPage() {
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <SectionHeading
             eyebrow="Über uns"
-            title="alignAgency verbindet Markenstrategie, kreative Leitung und digitale Umsetzung in einem klaren System."
-            description="Wir arbeiten nahbar, fokussiert und mit einem hohen Anspruch an Wirkung. Dabei entstehen Auftritte, Inhalte und digitale Lösungen, die professionell wirken und langfristig konsistent bleiben."
+            title="Wir kennen den Automotive-Bereich und wissen, worauf es online ankommt."
+            description="Wir helfen Autohäusern und Motorradhändlern dabei, sichtbarer, moderner und vertrauenswürdiger aufzutreten. Mit Content, der gut aussieht und gleichzeitig ein klares Verkaufsziel verfolgt."
           />
 
           <GlassCard className="p-6 sm:p-8">
             <p className="text-sm leading-7 text-white/65">
-              Unser Fokus liegt auf Branding, Social Media, Kampagnen und digitalen Lösungen, die
-              visuell stark sind und zugleich im Alltag tragfähig bleiben. Es geht nicht um
-              Effekte um ihrer selbst willen, sondern um eine klare Linie, die in jedem
-              Kontaktpunkt spürbar wird.
+              Wir arbeiten persönlich, direkt und mit einem klaren Blick für die Realität im
+              Verkauf. Es geht nicht darum, einfach nur schöne Videos zu machen. Es geht darum,
+              Fahrzeuge, Menschen und Angebote so zu zeigen, dass online mehr Vertrauen entsteht.
             </p>
 
             <div className="mt-8 grid gap-4">

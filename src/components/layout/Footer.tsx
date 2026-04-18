@@ -8,8 +8,8 @@ function Footer() {
         <div className="max-w-xl space-y-4">
           <LogoMark />
           <p className="text-sm leading-6 text-white/60">
-            alignAgency entwickelt hochwertige Markenauftritte, Content-Systeme und digitale
-            Erlebnisse mit Fokus auf Klarheit, Wirkung und saubere Umsetzung.
+            Wir helfen Autohäusern und Motorradhändlern mit Short Form Content, Imagefilmen und
+            einem professionelleren Online-Auftritt.
           </p>
         </div>
 
