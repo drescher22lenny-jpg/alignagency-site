@@ -48,7 +48,7 @@ function AboutPage() {
                 <img
                   src={member.image}
                   alt={member.role}
-                  className="h-full w-full object-cover"
+                  className="h-full w-full object-cover object-top"
                 />
                 <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.08),rgba(10,10,10,0.42))]" />
               </div>
