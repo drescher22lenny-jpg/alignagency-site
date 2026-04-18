@@ -93,13 +93,13 @@ export const teamMembers: TeamMember[] = [
   {
     name: "Stanley Grennigloh",
     role: "Geschäftsführer",
-    image: "/images/team/managing-director.png",
+    image: "/images/team/managing-director.webp",
     bio: "Verantwortet strategische Ausrichtung, Kundenführung und die Entwicklung eines Auftritts, der langfristig trägt.",
   },
   {
     name: "Lenny Drescher",
     role: "Creative Director & Founder",
-    image: "/images/team/creative-director-founder.png",
+    image: "/images/team/creative-director-founder.webp",
     bio: "Prägt visuelle Richtung, Markenwirkung und kreative Systeme mit einem klaren Blick für Wiedererkennbarkeit und Qualität.",
   },
 ];
