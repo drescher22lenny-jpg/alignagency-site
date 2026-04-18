@@ -26,24 +26,24 @@ export const navigationItems = [
 
 export const services: Service[] = [
   {
-    title: "Branding",
+    title: "Short Form Content",
     description:
-      "Markenauftritte mit klarer Positionierung, präziser Bildsprache und einem visuellen System, das langfristig trägt.",
+      "Wir produzieren kurze Videos, die Fahrzeuge, Angebote und Menschen schnell verständlich zeigen und auf Social Media Aufmerksamkeit schaffen.",
   },
   {
-    title: "Social Media",
+    title: "Imagefilme",
     description:
-      "Klarer Social Media Content inklusive Videoproduktion, der konsistent wirkt, schnell erfassbar ist und im Alltag funktioniert.",
+      "Wir machen Imagefilme, die Vertrauen aufbauen und zeigen, warum Kunden genau bei Ihnen kaufen oder anfragen sollten.",
   },
   {
-    title: "Kampagnen",
+    title: "Verkaufsorientierte Inhalte",
     description:
-      "Werbekampagnen mit klarer Idee, starkem visuellen Wiedererkennungswert und einer Umsetzung, die aufmerksam macht und im Markt funktioniert.",
+      "Wir denken Content nicht nur schön, sondern mit Ziel: mehr Interesse, mehr Probefahrten, mehr Beratungsgespräche und mehr Verkäufe.",
   },
   {
-    title: "Digitale Lösungen",
+    title: "Professioneller Auftritt",
     description:
-      "Websites, Landingpages und digitale Touchpoints, die elegant aussehen und im Alltag wirklich funktionieren.",
+      "Wir helfen Autohäusern und Motorradhändlern, online moderner, hochwertiger und einheitlicher wahrgenommen zu werden.",
   },
 ];
 
@@ -77,15 +77,15 @@ export const portfolioItems: PortfolioItem[] = [
 export const portfolioShowcase = [
   {
     eyebrow: "Markenwirkung",
-    title: "Branding, Content und digitale Präsenz greifen bei uns als ein System ineinander.",
+    title: "Content, Vertrauen und Verkauf müssen zusammenarbeiten.",
     description:
-      "alignAgency verbindet Strategie, Gestaltung und Umsetzung so, dass Marken nicht nur gut aussehen, sondern in Bewegung, Kommunikation und digitalen Touchpoints konsistent wirken.",
+      "Wir verbinden starke Bilder, klare Botschaften und Erfahrung im Automotive-Bereich, damit Ihr Online-Auftritt professioneller wirkt und mehr Anfragen auslöst.",
   },
   {
     eyebrow: "Arbeitsweise",
-    title: "Klar im Prozess. Nahbar in der Zusammenarbeit. Hochwertig im Ergebnis.",
+    title: "Wir arbeiten nahbar, schnell und mit Blick auf das Ergebnis.",
     description:
-      "Wir denken reduziert, entscheiden präzise und bauen nur das, was für Marke, Kommunikation und Wachstum wirklich relevant ist.",
+      "Vom ersten Konzept bis zum fertigen Video achten wir darauf, dass der Content zu Ihrem Betrieb passt und im Alltag wirklich nutzbar ist.",
   },
 ];
 
@@ -94,12 +94,12 @@ export const teamMembers: TeamMember[] = [
     name: "Stanley Grennigloh",
     role: "Geschäftsführer",
     image: "/images/team/managing-director.webp",
-    bio: "Verantwortet strategische Ausrichtung, Kundenführung und die Entwicklung eines Auftritts, der langfristig trägt.",
+    bio: "Begleitet Strategie, Kundenkontakt und die Frage, wie aus gutem Content echte Anfragen und Verkäufe entstehen.",
   },
   {
     name: "Lenny Drescher",
     role: "Creative Director & Founder",
     image: "/images/team/creative-director-founder.webp",
-    bio: "Prägt visuelle Richtung, Markenwirkung und kreative Systeme mit einem klaren Blick für Wiedererkennbarkeit und Qualität.",
+    bio: "Verantwortet Bildsprache, Videos und kreative Richtung mit viel Erfahrung in Content für Autohäuser und Motorradhändler.",
   },
 ];

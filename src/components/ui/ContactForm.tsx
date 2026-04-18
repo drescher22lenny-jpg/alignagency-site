@@ -43,7 +43,7 @@ function ContactForm() {
       }
 
       setSubmissionState("success");
-      setFeedbackMessage("Vielen Dank. Ihre Anfrage wurde erfolgreich versendet.");
+      setFeedbackMessage("Danke, Ihre Nachricht ist angekommen. Wir melden uns persönlich zurück.");
       setFormData(INITIAL_FORM_DATA);
     } catch (error) {
       setSubmissionState("error");
@@ -109,7 +109,7 @@ function ContactForm() {
           type="text"
           value={formData.company}
           onChange={(event) => updateField("company", event.target.value)}
-          placeholder="Unternehmen oder Marke"
+          placeholder="Autohaus, Motorradhandel oder Unternehmen"
           className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
         />
       </div>
@@ -126,7 +126,7 @@ function ContactForm() {
           rows={7}
           value={formData.message}
           onChange={(event) => updateField("message", event.target.value)}
-          placeholder="Worum geht es und was soll entstehen?"
+          placeholder="Wobei können wir helfen?"
           required
           className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
         />
@@ -142,7 +142,7 @@ function ContactForm() {
                 : "text-white/45"
           }`}
         >
-          {feedbackMessage || "Ihre Anfrage wird direkt über die Website an info@align-agency.com gesendet."}
+          {feedbackMessage || "Ihre Nachricht geht direkt an info@align-agency.com."}
         </p>
         <button
           type="submit"

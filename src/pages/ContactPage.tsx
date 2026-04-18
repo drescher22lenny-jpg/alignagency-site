@@ -8,8 +8,8 @@ function ContactPage() {
       <div className="mx-auto grid w-full max-w-content gap-10 lg:grid-cols-[0.85fr_1.15fr]">
         <SectionHeading
           eyebrow="Kontakt"
-          title="Wenn Sie Ihre Marke weiterentwickeln und klarer positionieren wollen, sind Sie bei uns richtig."
-          description="Teilen Sie uns kurz mit, woran Sie arbeiten. Wir melden uns mit einer klaren Einschätzung und einem passenden nächsten Schritt zurück."
+          title="Lassen Sie uns über Ihren Online-Auftritt sprechen."
+          description="Schreiben Sie uns kurz, ob es um Short Form Content, Imagefilme oder einen insgesamt professionelleren Auftritt geht. Wir melden uns persönlich zurück."
         />
 
         <GlassCard className="p-6 sm:p-8">

@@ -25,12 +25,11 @@ function HeroSection() {
       <div className="relative z-10 mx-auto grid min-h-[calc(100svh-7rem)] w-full max-w-content grid-cols-1 items-end gap-14 lg:grid-cols-[1.1fr_0.9fr]">
         <div className="relative z-10 max-w-3xl lg:w-[122%] lg:max-w-[1100px]">
           <h1 className="font-display text-5xl leading-[0.95] text-primary-light sm:text-6xl lg:text-8xl">
-            Markenauftritte mit Haltung, Klarheit und digitaler Präsenz.
+            Mehr Sichtbarkeit. Mehr Vertrauen. Mehr Verkäufe.
           </h1>
           <p className="mt-6 max-w-xl text-base leading-7 text-white/68 sm:text-lg">
-            alignAgency baut Marken durch Branding, Social Media Content, Videos, Kampagnen und
-            digitalen Lösungen für Unternehmen, die modern auftreten und langfristig konsistent
-            wirken wollen.
+            Wir helfen Autohäusern und Motorradhändlern dabei, online professioneller aufzutreten
+            und mit Short Form Content gezielt mehr Anfragen zu generieren.
           </p>
 
           <div className="mt-10 flex flex-col gap-4 sm:flex-row">
