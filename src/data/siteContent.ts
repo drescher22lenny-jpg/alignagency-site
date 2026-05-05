@@ -28,22 +28,22 @@ export const services: Service[] = [
   {
     title: "Short Form Content",
     description:
-      "Wir produzieren kurze Videos, die Fahrzeuge, Angebote und Menschen schnell verständlich zeigen und auf Social Media Aufmerksamkeit schaffen.",
+      "Wir produzieren kurze Videos, die Autos, Motorräder, Fahrräder, Angebote und Menschen schnell verständlich zeigen.",
   },
   {
     title: "Imagefilme",
     description:
-      "Wir machen Imagefilme, die Vertrauen aufbauen und zeigen, warum Kunden genau bei Ihnen kaufen oder anfragen sollten.",
+      "Wir machen Imagefilme, die Ihren Betrieb professionell zeigen und Vertrauen schaffen, bevor Kunden überhaupt vor Ort sind.",
   },
   {
-    title: "Verkaufsorientierte Inhalte",
+    title: "Kampagnen mit Ziel",
     description:
-      "Wir denken Content nicht nur schön, sondern mit Ziel: mehr Interesse, mehr Probefahrten, mehr Beratungsgespräche und mehr Verkäufe.",
+      "Wir denken Inhalte nicht nur modern, sondern klar verkaufsorientiert: mehr Interesse, mehr Probefahrten, mehr Gespräche.",
   },
   {
-    title: "Professioneller Auftritt",
+    title: "Professioneller Online-Auftritt",
     description:
-      "Wir helfen Autohäusern und Motorradhändlern, online moderner, hochwertiger und einheitlicher wahrgenommen zu werden.",
+      "Wir helfen Automotive-Betrieben, online hochwertiger, klarer und einheitlicher wahrgenommen zu werden.",
   },
 ];
 
@@ -92,7 +92,7 @@ export const portfolioShowcase = [
 export const teamMembers: TeamMember[] = [
   {
     name: "Stanley Grennigloh",
-    role: "Geschäftsführer",
+    role: "Business Development Manager",
     image: "/images/team/managing-director.webp",
     bio: "Begleitet Strategie, Kundenkontakt und die Frage, wie aus gutem Content echte Anfragen und Verkäufe entstehen.",
   },

@@ -7,7 +7,7 @@ function GlassCard({ className, ...props }: GlassCardProps) {
   return (
     <div
       className={cn(
-        "rounded-[28px] border border-white/10 bg-white/[0.04] backdrop-blur-xl shadow-soft",
+        "rounded-[8px] border border-black/[0.08] bg-[#fffaf3]/90 shadow-soft",
         className,
       )}
       {...props}

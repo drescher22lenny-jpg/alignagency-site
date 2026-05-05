@@ -4,20 +4,20 @@ import SectionHeading from "../ui/SectionHeading";
 
 function ServicesSection() {
   return (
-    <section className="px-5 py-20 sm:px-8 lg:px-10">
+    <section className="bg-[#fbf8f2] px-5 py-20 sm:px-8 lg:px-10">
       <div className="mx-auto flex w-full max-w-content flex-col gap-12">
         <SectionHeading
           eyebrow="Leistungen"
-          title="Content, der gut aussieht und verkaufen hilft."
-          description="Wir machen Videos und Online-Inhalte für Autohäuser und Motorradhändler, die professionell wirken und im Verkauf einen echten Zweck erfüllen."
+          title="Modern im Auftritt. Klar im Ziel."
+          description="Wir machen Videos und Online-Inhalte für Automotive-Betriebe, die hochwertig wirken und im Verkauf einen echten Zweck erfüllen."
         />
 
         <div className="grid gap-5 md:grid-cols-2">
           {services.map((service) => (
-            <GlassCard key={service.title} className="p-7 sm:p-8">
-              <p className="text-xs uppercase tracking-[0.24em] text-white/40">Automotive Content</p>
-              <h3 className="mt-5 font-display text-2xl text-primary-light">{service.title}</h3>
-              <p className="mt-4 max-w-md text-sm leading-7 text-white/62 sm:text-base">
+            <GlassCard key={service.title} className="reveal p-7 transition hover:-translate-y-1 sm:p-8">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">Automotive</p>
+              <h3 className="mt-5 font-display text-2xl text-[#171717]">{service.title}</h3>
+              <p className="mt-4 max-w-md text-sm leading-7 text-secondary sm:text-base">
                 {service.description}
               </p>
             </GlassCard>

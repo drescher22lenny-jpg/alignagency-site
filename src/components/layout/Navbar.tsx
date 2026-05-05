@@ -4,8 +4,8 @@ import LogoMark from "../ui/LogoMark";
 
 function Navbar() {
   return (
-    <header className="sticky top-0 z-50 border-b border-white/6 bg-canvas/75 backdrop-blur-2xl">
-      <div className="mx-auto w-full max-w-content px-5 py-4 sm:px-8 lg:px-10">
+    <header className="sticky top-0 z-50 border-b border-black/10 bg-[#fbf8f2]/88 backdrop-blur-xl">
+      <div className="mx-auto w-full max-w-[1480px] px-5 py-4 sm:px-8 lg:px-10">
         <div className="flex items-center justify-between gap-4">
           <Link to="/" aria-label="alignAgency Startseite">
             <LogoMark />
@@ -18,8 +18,8 @@ function Navbar() {
                 to={item.href}
                 className={({ isActive }) =>
                   [
-                    "text-sm tracking-[0.18em] uppercase transition-colors duration-200",
-                    isActive ? "text-primary-light" : "text-white/55 hover:text-white/90",
+                    "text-xs font-semibold uppercase tracking-[0.18em] transition-colors duration-200",
+                    isActive ? "text-[#171717]" : "text-secondary hover:text-[#171717]",
                   ].join(" ")
                 }
               >
@@ -30,13 +30,13 @@ function Navbar() {
 
           <Link
             to="/contact"
-            className="rounded-full border border-white/12 bg-white/6 px-4 py-2 text-sm font-medium text-primary-light transition hover:border-white/20 hover:bg-white/10"
+            className="rounded-full bg-black px-5 py-3 text-sm font-medium text-white shadow-[0_6px_16px_rgba(23,23,23,0.12)] transition hover:-translate-y-0.5 hover:bg-[#ef4f24]"
           >
             Projekt anfragen
           </Link>
         </div>
 
-        <nav className="mt-4 flex items-center gap-4 overflow-x-auto border-t border-white/6 pt-4 md:hidden">
+        <nav className="mt-4 flex items-center gap-4 overflow-x-auto border-t border-black/10 pt-4 md:hidden">
           {navigationItems.map((item) => (
             <NavLink
               key={item.href}
@@ -44,7 +44,7 @@ function Navbar() {
               className={({ isActive }) =>
                 [
                   "whitespace-nowrap text-xs uppercase tracking-[0.22em] transition-colors",
-                  isActive ? "text-primary-light" : "text-white/55 hover:text-white/90",
+                  isActive ? "text-[#171717]" : "text-secondary hover:text-[#171717]",
                 ].join(" ")
               }
             >

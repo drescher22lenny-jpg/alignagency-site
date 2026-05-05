@@ -17,14 +17,14 @@ function SectionHeading({
 
   return (
     <div className={`flex max-w-2xl flex-col gap-4 ${alignment}`}>
-      <span className="text-xs font-medium uppercase tracking-[0.32em] text-white/55">
+      <span className="text-xs font-semibold uppercase tracking-[0.22em] text-[#ef4f24]">
         <GradientText>{eyebrow}</GradientText>
       </span>
-      <h2 className="font-display text-3xl leading-tight text-primary-light sm:text-4xl lg:text-5xl">
+      <h2 className="font-display text-3xl leading-tight text-[#171717] sm:text-4xl lg:text-5xl">
         {title}
       </h2>
       {description ? (
-        <p className="text-base leading-7 text-white/65 sm:text-lg">{description}</p>
+        <p className="text-base leading-7 text-secondary sm:text-lg">{description}</p>
       ) : null}
     </div>
   );

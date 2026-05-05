@@ -9,8 +9,8 @@ import PrivacyPage from "./pages/PrivacyPage";
 
 function App() {
   return (
-    <div className="relative min-h-screen bg-canvas text-primary-light">
-      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_top,rgba(240,139,73,0.12),transparent_35%),radial-gradient(circle_at_80%_20%,rgba(246,196,83,0.08),transparent_25%),linear-gradient(180deg,#0A0A0A_0%,#090909_100%)]" />
+    <div className="relative min-h-screen bg-[#fbf8f2] text-[#171717]">
+      <div className="pointer-events-none fixed inset-0 -z-10 bg-[radial-gradient(circle_at_18%_0%,rgba(240,122,34,0.12),transparent_30%),linear-gradient(180deg,#FBF8F2_0%,#F4EFE8_100%)]" />
       <Navbar />
       <main>
         <Routes>

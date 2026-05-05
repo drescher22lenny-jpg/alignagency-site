@@ -5,23 +5,23 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        canvas: "#0A0A0A",
-        "primary-dark": "#222222",
-        secondary: "#5B5B5B",
-        "primary-light": "#FFFFFC",
+        canvas: "#F7F4EF",
+        "primary-dark": "#171717",
+        secondary: "#6E6A64",
+        "primary-light": "#171717",
         glow: {
-          yellow: "#F6C453",
-          orange: "#F08B49",
-          red: "#D6523C",
+          yellow: "#F5B642",
+          orange: "#F07A22",
+          red: "#E4312B",
         },
       },
       backgroundImage: {
         "accent-gradient":
-          "linear-gradient(135deg, #F6C453 0%, #F08B49 48%, #D6523C 100%)",
+          "linear-gradient(135deg, #F5B642 0%, #F07A22 48%, #E4312B 100%)",
       },
       boxShadow: {
-        glow: "0 0 40px rgba(240, 139, 73, 0.18)",
-        soft: "0 24px 80px rgba(0, 0, 0, 0.45)",
+        glow: "0 12px 32px rgba(240, 122, 34, 0.12)",
+        soft: "0 10px 28px rgba(35, 30, 24, 0.055)",
       },
       fontFamily: {
         sans: ["Satoshi", "Inter", "system-ui", "sans-serif"],
