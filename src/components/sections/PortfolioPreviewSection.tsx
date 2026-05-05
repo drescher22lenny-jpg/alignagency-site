@@ -16,24 +16,24 @@ function PortfolioPreviewSection() {
           />
           <Link
             to="/portfolio"
-            className="text-sm uppercase tracking-[0.24em] text-white/60 transition hover:text-white"
+            className="text-sm font-semibold uppercase tracking-[0.2em] text-secondary transition hover:text-[#171717]"
           >
             Alle Projekte ansehen
           </Link>
         </div>
 
         <div className="grid gap-5 lg:grid-cols-[1.15fr_0.85fr]">
-          <article className="group relative overflow-hidden rounded-[34px] border border-white/10 bg-[#111111] p-6 shadow-soft sm:p-8">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(240,139,73,0.18),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.03),transparent_60%)]" />
+          <article className="group relative overflow-hidden rounded-[8px] border border-black/10 bg-[#fffaf3] p-6 shadow-soft sm:p-8">
+            <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_left,rgba(240,122,34,0.12),transparent_32%),linear-gradient(180deg,rgba(255,255,255,0.5),transparent_60%)]" />
             <div className="relative flex h-full min-h-[460px] flex-col justify-between gap-10">
               <div className="max-w-xl">
-                <p className="text-xs uppercase tracking-[0.24em] text-white/45">
+                <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">
                   Featured Case
                 </p>
-                <h3 className="mt-4 font-display text-3xl leading-tight text-primary-light sm:text-4xl">
+                <h3 className="mt-4 font-display text-3xl leading-tight text-[#171717] sm:text-4xl">
                   {portfolioShowcase[0].title}
                 </h3>
-                <p className="mt-5 text-base leading-7 text-white/62">
+                <p className="mt-5 text-base leading-7 text-secondary">
                   {portfolioShowcase[0].description}
                 </p>
               </div>
@@ -46,7 +46,7 @@ function PortfolioPreviewSection() {
                 return (
                   <article
                     key={item.title}
-                    className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03]"
+                    className="relative overflow-hidden rounded-[8px] border border-black/10 bg-[#fffaf3] shadow-soft"
                   >
                     <div className={`absolute inset-0 bg-gradient-to-br ${item.accent}`} />
                     <video
@@ -59,17 +59,17 @@ function PortfolioPreviewSection() {
                     >
                       <source src={PORTFOLIO_PREVIEW_VIDEO_SRC} type="video/mp4" />
                     </video>
-                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.16),rgba(10,10,10,0.58))]" />
+                    <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,243,0.12),rgba(255,250,243,0.78))]" />
                     <div className="relative flex h-full min-h-[270px] flex-col gap-10 p-6">
                       <div>
-                        <p className="text-xs uppercase tracking-[0.24em] text-white/45">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">
                           {item.category}
                         </p>
-                        <h3 className="mt-4 font-display text-2xl text-primary-light">
+                        <h3 className="mt-4 font-display text-2xl text-[#171717]">
                           {item.title}
                         </h3>
                       </div>
-                      <p className="mt-auto max-w-md text-sm leading-7 text-white/72">
+                      <p className="mt-auto max-w-md text-sm leading-7 text-secondary">
                         {item.summary}
                       </p>
                     </div>
@@ -80,20 +80,20 @@ function PortfolioPreviewSection() {
               return (
                 <article
                   key={item.title}
-                  className="relative overflow-hidden rounded-[30px] border border-white/10 bg-white/[0.03] p-6"
+                  className="relative overflow-hidden rounded-[8px] border border-black/10 bg-[#fffaf3] p-6 shadow-soft"
                 >
                   <div className={`absolute inset-0 bg-gradient-to-br ${item.accent}`} />
                   <div className="relative flex h-full flex-col gap-10">
                     <div className="flex items-start justify-between gap-6">
                       <div>
-                        <p className="text-xs uppercase tracking-[0.24em] text-white/45">
+                        <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">
                           {item.category}
                         </p>
-                        <h3 className="mt-4 font-display text-2xl text-primary-light">{item.title}</h3>
+                        <h3 className="mt-4 font-display text-2xl text-[#171717]">{item.title}</h3>
                       </div>
                       <img src={item.image} alt={item.title} className="h-12 w-12 object-contain" />
                     </div>
-                    <p className="max-w-md text-sm leading-7 text-white/62">{item.summary}</p>
+                    <p className="max-w-md text-sm leading-7 text-secondary">{item.summary}</p>
                   </div>
                 </article>
               );
@@ -102,12 +102,12 @@ function PortfolioPreviewSection() {
           </div>
         </div>
 
-        <article className="grid gap-6 rounded-[34px] border border-white/10 bg-white/[0.03] p-6 sm:p-8 lg:grid-cols-2">
+        <article className="grid gap-6 rounded-[8px] border border-black/10 bg-[#fffaf3] p-6 shadow-soft sm:p-8 lg:grid-cols-2">
           {portfolioShowcase.map((item) => (
             <div key={item.eyebrow} className="space-y-4">
-              <p className="text-xs uppercase tracking-[0.24em] text-white/45">{item.eyebrow}</p>
-              <h3 className="font-display text-2xl leading-tight text-primary-light">{item.title}</h3>
-              <p className="max-w-xl text-sm leading-7 text-white/62 sm:text-base">
+              <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">{item.eyebrow}</p>
+              <h3 className="font-display text-2xl leading-tight text-[#171717]">{item.title}</h3>
+              <p className="max-w-xl text-sm leading-7 text-secondary sm:text-base">
                 {item.description}
               </p>
             </div>

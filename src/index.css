@@ -15,12 +15,12 @@
 }
 
 :root {
-  color-scheme: dark;
-  --color-canvas: #0a0a0a;
-  --color-surface: #222222;
-  --color-muted: #5b5b5b;
-  --color-text: #fffffc;
-  --gradient-accent: linear-gradient(135deg, #f6c453 0%, #f08b49 48%, #d6523c 100%);
+  color-scheme: light;
+  --color-canvas: #f7f4ef;
+  --color-surface: #fffaf3;
+  --color-muted: #6e6a64;
+  --color-text: #171717;
+  --gradient-accent: linear-gradient(135deg, #f5b642 0%, #f07a22 48%, #e4312b 100%);
 }
 
 html {
@@ -31,8 +31,8 @@ body {
   margin: 0;
   min-width: 320px;
   background:
-    radial-gradient(circle at top, rgba(240, 139, 73, 0.1), transparent 28%),
-    linear-gradient(180deg, #0a0a0a 0%, #090909 100%);
+    radial-gradient(circle at 18% 0%, rgba(240, 122, 34, 0.11), transparent 30%),
+    linear-gradient(180deg, #fbf8f2 0%, #f4efe8 100%);
   color: var(--color-text);
   font-family: "Satoshi", "Inter", system-ui, sans-serif;
   text-rendering: optimizeLegibility;
@@ -50,7 +50,7 @@ a {
 }
 
 *::selection {
-  background: rgba(240, 139, 73, 0.3);
+  background: rgba(240, 122, 34, 0.22);
   color: var(--color-text);
 }
 
@@ -64,10 +64,35 @@ a {
 
 .grid-poster {
   background-image:
-    linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+    linear-gradient(rgba(23, 23, 23, 0.045) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(23, 23, 23, 0.045) 1px, transparent 1px);
   background-position: center;
   background-size: 48px 48px;
+}
+
+.reveal {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .reveal {
+    animation: reveal-up 0.72s ease both;
+    animation-timeline: view();
+    animation-range: entry 0% cover 24%;
+  }
+}
+
+@keyframes reveal-up {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @layer base {

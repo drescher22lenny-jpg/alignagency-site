@@ -64,7 +64,7 @@ function ContactForm() {
       <div>
         <label
           htmlFor="name"
-          className="mb-2 block text-xs uppercase tracking-[0.22em] text-white/45"
+          className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-secondary"
         >
           Name
         </label>
@@ -75,14 +75,14 @@ function ContactForm() {
           onChange={(event) => updateField("name", event.target.value)}
           placeholder="Ihr Name"
           required
-          className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
+          className="w-full rounded-[8px] border border-black/12 bg-white/70 px-4 py-3 text-sm text-[#171717] outline-none transition placeholder:text-black/30 focus:border-[#ef4f24]"
         />
       </div>
 
       <div>
         <label
           htmlFor="email"
-          className="mb-2 block text-xs uppercase tracking-[0.22em] text-white/45"
+          className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-secondary"
         >
           E-Mail
         </label>
@@ -93,14 +93,14 @@ function ContactForm() {
           onChange={(event) => updateField("email", event.target.value)}
           placeholder="mail@unternehmen.de"
           required
-          className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
+          className="w-full rounded-[8px] border border-black/12 bg-white/70 px-4 py-3 text-sm text-[#171717] outline-none transition placeholder:text-black/30 focus:border-[#ef4f24]"
         />
       </div>
 
       <div className="sm:col-span-2">
         <label
           htmlFor="company"
-          className="mb-2 block text-xs uppercase tracking-[0.22em] text-white/45"
+          className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-secondary"
         >
           Unternehmen
         </label>
@@ -110,14 +110,14 @@ function ContactForm() {
           value={formData.company}
           onChange={(event) => updateField("company", event.target.value)}
           placeholder="Autohaus, Motorradhandel oder Unternehmen"
-          className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
+          className="w-full rounded-[8px] border border-black/12 bg-white/70 px-4 py-3 text-sm text-[#171717] outline-none transition placeholder:text-black/30 focus:border-[#ef4f24]"
         />
       </div>
 
       <div className="sm:col-span-2">
         <label
           htmlFor="message"
-          className="mb-2 block text-xs uppercase tracking-[0.22em] text-white/45"
+          className="mb-2 block text-xs font-semibold uppercase tracking-[0.18em] text-secondary"
         >
           Nachricht
         </label>
@@ -128,7 +128,7 @@ function ContactForm() {
           onChange={(event) => updateField("message", event.target.value)}
           placeholder="Wobei können wir helfen?"
           required
-          className="w-full rounded-[24px] border border-white/10 bg-black/20 px-4 py-3 text-sm text-white outline-none transition placeholder:text-white/25 focus:border-white/20"
+          className="w-full rounded-[8px] border border-black/12 bg-white/70 px-4 py-3 text-sm text-[#171717] outline-none transition placeholder:text-black/30 focus:border-[#ef4f24]"
         />
       </div>
 
@@ -138,8 +138,8 @@ function ContactForm() {
             submissionState === "error"
               ? "text-[#f08b49]"
               : submissionState === "success"
-                ? "text-white/70"
-                : "text-white/45"
+                ? "text-secondary"
+                : "text-secondary"
           }`}
         >
           {feedbackMessage || "Ihre Nachricht geht direkt an info@align-agency.com."}
@@ -147,7 +147,7 @@ function ContactForm() {
         <button
           type="submit"
           disabled={submissionState === "submitting"}
-          className="inline-flex rounded-full bg-accent-gradient px-6 py-3 text-sm font-semibold text-black transition hover:scale-[1.01]"
+          className="inline-flex rounded-full bg-black px-6 py-3 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:bg-[#ef4f24] disabled:cursor-not-allowed disabled:opacity-60"
         >
           {submissionState === "submitting" ? "Wird gesendet..." : "Anfrage senden"}
         </button>

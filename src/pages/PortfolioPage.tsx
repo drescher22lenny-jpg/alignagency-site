@@ -18,9 +18,9 @@ function PortfolioPage() {
           {portfolioItems.map((item, index) => (
             <article
               key={item.title}
-              className={`relative overflow-hidden rounded-[30px] border border-white/10 ${
+              className={`relative overflow-hidden rounded-[8px] border border-black/10 ${
                 index === 0 ? "md:col-span-2 md:min-h-[380px]" : ""
-              } bg-white/[0.03]`}
+              } bg-[#fffaf3] shadow-soft`}
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${item.accent}`} />
               {index === 0 ? (
@@ -30,8 +30,7 @@ function PortfolioPage() {
                     alt="Case 1 Brandboard"
                     className="absolute inset-0 h-full w-full object-cover"
                   />
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.24),rgba(10,10,10,0.88))]" />
-                  <div className="absolute inset-0 bg-black/36" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,243,0.14),rgba(255,250,243,0.82))]" />
                 </>
               ) : null}
               {index === 1 ? (
@@ -46,22 +45,21 @@ function PortfolioPage() {
                   >
                     <source src={PORTFOLIO_PAGE_VIDEO_SRC} type="video/mp4" />
                   </video>
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,10,0.18),rgba(10,10,10,0.78))]" />
-                  <div className="absolute inset-0 bg-black/24" />
+                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(255,250,243,0.12),rgba(255,250,243,0.8))]" />
                 </>
               ) : null}
               <div className="relative flex h-full flex-col justify-between gap-10 p-6">
                 <div className="space-y-4">
-                  <p className="text-xs uppercase tracking-[0.24em] text-white/45">{item.category}</p>
-                  <h2 className="font-display text-3xl leading-tight text-primary-light">
+                  <p className="text-xs font-semibold uppercase tracking-[0.2em] text-[#ef4f24]">{item.category}</p>
+                  <h2 className="font-display text-3xl leading-tight text-[#171717]">
                     {item.title}
                   </h2>
-                  <p className="max-w-lg text-sm leading-7 text-white/62 sm:text-base">
+                  <p className="max-w-lg text-sm leading-7 text-secondary sm:text-base">
                     {item.summary}
                   </p>
                 </div>
                 <div className="flex items-end justify-between gap-6">
-                  <span className="text-sm text-white/40">Case 0{index + 1}</span>
+                  <span className="text-sm text-secondary">Case 0{index + 1}</span>
                   {index !== 0 && index !== 2 ? (
                     <img src={item.image} alt={item.title} className="h-16 w-auto object-contain" />
                   ) : null}
